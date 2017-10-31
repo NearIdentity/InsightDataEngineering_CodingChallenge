@@ -50,14 +50,14 @@ For processing by ZIP code case, we stream the raw Pandas data-frame parsed earl
 
 
 
-## Unit Test: Malformed Date
+## Unit Test: Malformed ZIP Code
 
 We try a Canadian postal code in the data:
 * The ZIP code-based output ignores the data row.
 * The date-based output takes the data into account
 
 
-## Unit Test: Malformed ZIP Code
+## Unit Test: Malformed Date
 
 We try a malformed date in the data:
 * The ZIP code-based output accepts the data row.
