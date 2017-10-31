@@ -14,7 +14,7 @@
 ##################################################################################################
 
 
-===================================
+
 	General Information
 ===================================
 
@@ -33,7 +33,7 @@ Median calculation method: min and max heap-based; using heapq module
 * Heap roots are set up to provide bases for median calculation: median is root of more populated heap or mean of roots of balanced heaps
 
 
-========================================
+
 	Transaction Data by Date
 ========================================
 
@@ -45,7 +45,7 @@ We process the input file as a Pandas data-frame for transaction by date, as we 
 * We then traverse the data-frame line-by-line to collate statistics per (CMTE_ID, TRANSACTION_DT) pair: this has O(N) performance
 
 
-============================================
+
 	Transaction Data by ZIP Code
 ============================================
 
@@ -55,7 +55,7 @@ For processing by ZIP code case, we stream the raw Pandas data-frame parsed earl
 * We ouptut data into the output stream/file from the last updated entry in the dict.
 
 
-=========================================
+
 	Unit Test: Malformed Date
 =========================================
 
@@ -63,7 +63,7 @@ We try a Canadian postal code in the data:
 * The ZIP code-based output ignores the data row.
 * The date-based output takes the data into account
 
-=============================================
+
 	Unit Test: Malformed ZIP Code
 =============================================
 
