@@ -1,22 +1,18 @@
-##################################################################################################
 
-	Analysis of US Federal Elections Commission Individual Campaign Contribution Datasets
+#	Analysis of US Federal Elections Commission Individual Campaign Contribution Datasets
 
-		Coding Challenge Submission for Insight Data Engineering Fellowship
+#		Coding Challenge Submission for Insight Data Engineering Fellowship
 
 
 	
-					Abdullah Al Rashid
+#					Abdullah Al Rashid
 
 
-					October 31st, 2017
-
-##################################################################################################
+#					October 31st, 2017
 
 
 
-	General Information
-===================================
+# General Information
 
 Programming language used: Python
 
@@ -33,9 +29,8 @@ Median calculation method: min and max heap-based; using heapq module
 * Heap roots are set up to provide bases for median calculation: median is root of more populated heap or mean of roots of balanced heaps
 
 
+# Transaction Data by Date
 
-	Transaction Data by Date
-========================================
 
 We process the input file as a Pandas data-frame for transaction by date, as we need not process a stream:
 * A data-frame offers O(1) to O(log(N)) performance for filtering data.
@@ -46,8 +41,7 @@ We process the input file as a Pandas data-frame for transaction by date, as we 
 
 
 
-	Transaction Data by ZIP Code
-============================================
+# Transaction Data by ZIP Code
 
 For processing by ZIP code case, we stream the raw Pandas data-frame parsed earlier row-by-row into a function:
 * We validate CMTE_ID, OTHER_ID, TRANSACTION_AMT, and ZIP_CODE fields for each input row.
@@ -56,16 +50,14 @@ For processing by ZIP code case, we stream the raw Pandas data-frame parsed earl
 
 
 
-	Unit Test: Malformed Date
-=========================================
+# Unit Test: Malformed Date
 
 We try a Canadian postal code in the data:
 * The ZIP code-based output ignores the data row.
 * The date-based output takes the data into account
 
 
-	Unit Test: Malformed ZIP Code
-=============================================
+# Unit Test: Malformed ZIP Code
 
 We try a malformed date in the data:
 * The ZIP code-based output accepts the data row.
