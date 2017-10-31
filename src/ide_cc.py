@@ -6,6 +6,23 @@ import warnings
 import heapq
 
 '''
+Function name: push_data_into_heaps
+
+Description:
+	Pushing single data value into a max heap and a min heap
+	* Heaps to be balanced: difference of size to be at most one
+	* Max heap implemented as a min heap of negative values (heapq allowing for only min heaps)
+
+Input(s):
+	list_min_heap	-- list structure containing min heap
+	list_max_heap	-- list structure containing max heap
+	value		-- data value to be pushed into heaps
+
+Output(s):
+	None
+
+Return value(s):
+	None
 
 '''
 def push_data_into_heaps(list_min_heap, list_max_heap, value):
@@ -28,7 +45,25 @@ def push_data_into_heaps(list_min_heap, list_max_heap, value):
 		if (len(list_min_heap) == len(list_max_heap) + 2):
 			tmp = -heapq.heappop(list_min_heap)
 			heapq.heappush(list_max_heap, tmp)
+
 '''
+Function name: calculate_median_from_heaps
+
+Description:
+	Median calculation using max heap and a min heap
+	* Heaps assumed to be balanced: difference of size to be at most one; no checks conducted
+	* Max heap implemented as a min heap of negative values (heapq allowing for only min heaps)
+	* Median being the root of the more highly populated heap or the mean of roots of evenly balanced heaps
+
+Input(s):
+	list_min_heap	-- list structure containing min heap
+	list_max_heap	-- list structure containing max heap
+
+Output(s):
+	return
+
+Return value(s):
+	Running median value of dataset: calculated as float("NaN") for the case of empty heaps or invalid calculation logic
 
 '''
 def calculate_median_from_heaps(list_min_heap, list_max_heap):
